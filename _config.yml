@@ -21,9 +21,8 @@ author: Charlie Kerfoot
 
 navbar-links:
   About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
+  Projects:
+    - Digimon CSV: "digimon"
   Author's home: ""
 
 ################
