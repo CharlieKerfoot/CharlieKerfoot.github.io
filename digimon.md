@@ -11,45 +11,48 @@ Each Digimon has an id, name, stage, type, attribute, etc.
 Here are the first five entries in the dataset:
 
 |Number|Digimon|Stage|Type|Attribute|Memory|Equip Slots|HP|SP|Atk|Def|Int|Spd|
-|:----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:------:|:-----:|:------:
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |1     |Kuramon|Baby|Free|Neutral|2|0|590|77|79|69|68|95|
 |2     |Pabumon|Baby|Free|Neutral|2|0|950|62|76|76|69|68|
 |3     |Punimon|Baby|Free|Neutral|2|0|870|50|97|87|50|75|
 |4     |Botamon|Baby|Free|Neutral|2|0|690|68|77|95|76|61|
 |5     |Poyomon|Baby|Free|Neutral|2|0|540|98|54|59|95|86|
 
-The first question I had to answer was:
+Using this dataset, I had to answer three different question addressing different stats and traits of the Digimon. I exclusively used python built-in functions as well as the csv module to implement my code. 
 
 ## 1. What is the average HP of all the Digimon?
 
-In my mind, there were two main ways to solve this problem: 
+Looking at the dataset, each digimon had an HP value, which could simply be summed to create a total and then divided by the number of digimons to find the average. With this in mind, I had  two main ways to solve this problem: 
 
-### A quick, potentially one-line solution that just printed out the answer
+### A concise, one-line solution that just printed out the answer
 
-`def find_avg(file, parameter):
+```python 
+def find_avg(file, parameter):
     with open(file, "r") as f:
         data = list(csv.DictReader(f))
-        print(sum(float(row[parameter]) for row in data)/len(data))`
+        print(sum(float(row[parameter]) for row in data)/len(data))
+```
 
 I simply used the [built-in sum function](https://docs.python.org/3/library/functions.html#sum) to get the total HP of all the digimon and then divides it by the number of digimon (using the length of the dataset). I like how this function is so concise and only uses one line but it can be hard to read and the output is basically just a magic number outside of the context of the question. 
 
 ### A less efficient and longer solution that used a nested dictionary to more cleanly display the data and could be use more dynamically
 
-`def find_avg(file, parameter):
+```python 
+def find_avg(file, parameter):
     answers = defaultdict(lambda: {"total": 0, "count": 0})
 
     with open(file, "r) as f:
         for row in data:
-
             answers[row[parameter]]["total"] += value
             answers[row[parameter]]["count"] += 1
             answers[row[parameter]]["average"] = answers[row[parameter]]["total"] / answers[row[parameter]]["count"]
 
-    print(dict(answers))`
+    print(dict(answers))
+```
 
 Here, I, instead, set up a nested dictionary which holds the values of `[total]`, `[count]`, and `[average]` and then returns the whole dictionary rather than just the average HP value. While this function is clearly more verbose and uses more lines of code, the code itself is far more readable and the output allows the user to see the count and total aside from just the average. For a straightforward problem like this one, I might prefer the first solution but the organization of a nested dictionary data structure is much more convenient as the problem scales in complexity.
 
-Calling find_avg("datasets/digimon.csv", "HP") on both functions will return the same, correct answer. It just comes down to what you are prioritizing and what style your prefer when answering the question. 
+Calling `find_avg("datasets/digimon.csv", "HP")` on both functions will return the same, correct answer. It just comes down to what you are prioritizing and what style your prefer when answering the question. 
 
 ## 2. Write a function that can count the number of Digimon with a specific attribute. 
 
@@ -57,16 +60,19 @@ The key difference in this question is the generalization of the parameters, whe
 
 ### One-Liner Solution
 
-`def count_digimon(file, category, value):
+```python 
+def count_digimon(file, category, value):
     with open(file, "r") as f:
         data = csv.DictReader(f)
-        print(sum(1 for row in data if row[category] == value))`
+        print(sum(1 for row in data if row[category] == value))
+```
 
 This function is almost identical to the first solution of the previous problem. All that is changed is the lack of division over the count and the addition of the condition which adds one to the count if the condition is met.
 
 ### Nested Dictionary Solution
 
-`def find_avg(file, category, value):
+```python 
+def find_avg(file, category, value):
     answers = defaultdict(lambda: {"count": 0})
 
     with open(file, "r) as f:
@@ -74,7 +80,8 @@ This function is almost identical to the first solution of the previous problem.
             if row[category] == value:
                 answers[row[parameter]]["count"] += 1
 
-    print(dict(answers))`
+    print(dict(answers))
+```
 
 Compared to the last problem, I really don't like this solution that much. The question is asking for so little that the nested dictionary really just starts to take up extra space and becomes a nuisance rather than a convenient data structure and potential future-proofing infrastructure.
 
@@ -130,7 +137,8 @@ The second key difference is that the question requires outputting the team of d
 
 With all these things in mind, here is my implementation and solution to the problem:
 
-```python def find_max_atk(file, max_digi, max_mem):
+```python 
+def find_max_atk(file, max_digi, max_mem):
     with open(file, "r") as f:
         data = list(csv.DictReader(f))
         
@@ -167,6 +175,8 @@ I created to multi-dimensional arrays to track both the max attack of the team a
 The final bit of the code directly addresses our second issue. After finding the team with the most attack (that didn't exceed the `max_mem`) and then backtracks through the selected list to find the digimon that made up that team.
 
 ## Conclusion
+
+My key takeaway from this lab is the ability to be flexible and choose which solution fits your needs. For each of the first two questions, I had two different solutions and I could see times where I would want to use either function. I'm still wondering whether there is a better solution, or cleaner solution at least, for problem three but overall I am pretty happy with my code. I was thinking of other ideas where you might filter the dataset or use the [meet-in-the-middle algorithm](https://www.geeksforgeeks.org/meet-in-the-middle/) but I don't think they would really solve the issue as `N` scales. I also just liked refreshing my memory on the knapsack problem and seeing that these two problems fell under the same set of problem.
 
 
 
