@@ -18,11 +18,11 @@ Here are the first five entries in the dataset:
 |4     |Botamon|Baby|Free|Neutral|2|0|690|68|77|95|76|61|
 |5     |Poyomon|Baby|Free|Neutral|2|0|540|98|54|59|95|86|
 
-Using this dataset, I had to answer three different question addressing different stats and traits of the Digimon. I exclusively used python built-in functions as well as the csv module to implement my code. 
+Using this dataset, I had to answer three different questions addressing the different stats and traits of the Digimon. I exclusively used python built-in functions as well as the CSV module to implement my code. 
 
 ## 1. What is the average HP of all the Digimon?
 
-Looking at the dataset, each digimon had an HP value, which could simply be summed to create a total and then divided by the number of digimons to find the average. With this in mind, I had  two main ways to solve this problem: 
+Looking at the dataset, each Digimon had an HP value, which could simply be summed to create a total and then divided by the number of Digimon to find the average. With this in mind, I had two main ways to solve this problem: 
 
 ### A concise, one-line solution that just printed out the answer
 
@@ -33,7 +33,7 @@ def find_avg(file, parameter):
         print(sum(float(row[parameter]) for row in data)/len(data))
 ```
 
-I simply used the [built-in sum function](https://docs.python.org/3/library/functions.html#sum) to get the total HP of all the digimon and then divides it by the number of digimon (using the length of the dataset). I like how this function is so concise and only uses one line but it can be hard to read and the output is basically just a magic number outside of the context of the question. 
+I simply used the [built-in sum function](https://docs.python.org/3/library/functions.html#sum) to get the total HP of all the digimon and then divided it by the number of Digimon (using the length of the dataset). I like how this function is so concise and only uses one line but it can be hard to read and the output is basically just a magic number outside of the context of the question. 
 
 ### A less efficient and longer solution that used a nested dictionary to more cleanly display the data and could be use more dynamically
 
@@ -41,7 +41,7 @@ I simply used the [built-in sum function](https://docs.python.org/3/library/func
 def find_avg(file, parameter):
     answers = defaultdict(lambda: {"total": 0, "count": 0})
 
-    with open(file, "r) as f:
+    with open(file, "r") as f:
         for row in data:
             answers[row[parameter]]["total"] += value
             answers[row[parameter]]["count"] += 1
@@ -50,9 +50,9 @@ def find_avg(file, parameter):
     print(dict(answers))
 ```
 
-Here, I, instead, set up a nested dictionary which holds the values of `[total]`, `[count]`, and `[average]` and then returns the whole dictionary rather than just the average HP value. While this function is clearly more verbose and uses more lines of code, the code itself is far more readable and the output allows the user to see the count and total aside from just the average. For a straightforward problem like this one, I might prefer the first solution but the organization of a nested dictionary data structure is much more convenient as the problem scales in complexity.
+Here, I, instead, set up a nested dictionary which holds the values of `[total]`, `[count]`, and `[average]` and then returns the whole dictionary rather than just the average `HP` value. While this function is clearly more verbose and uses more lines of code, the code itself is far more readable and the output allows the user to see the count and total aside from just the average. For a straightforward problem like this one, I might prefer the first solution but the organization of a nested dictionary data structure is much more convenient as the problem scales in complexity.
 
-Calling `find_avg("datasets/digimon.csv", "HP")` on both functions will return the same, correct answer. It just comes down to what you are prioritizing and what style your prefer when answering the question. 
+Calling `find_avg("datasets/digimon.csv", "HP")` on both functions will return the same correct answer. It just comes down to what you are prioritizing and what style you prefer when answering the question. 
 
 ## 2. Write a function that can count the number of Digimon with a specific attribute. 
 
@@ -75,7 +75,7 @@ This function is almost identical to the first solution of the previous problem.
 def find_avg(file, category, value):
     answers = defaultdict(lambda: {"count": 0})
 
-    with open(file, "r) as f:
+    with open(file, "r") as f:
         for row in data:
             if row[category] == value:
                 answers[row[parameter]]["count"] += 1
@@ -129,7 +129,7 @@ If we extrapolate some of those ideas, we can create a table that represents our
 |2|0|0|79|82|82|161|161|210|
 |3|0|0|79|82|82|161|161|210|
 
-This idea works mostly, BUT the original question contains two extra constraints that aren't included in this tabulation solution. 
+This idea works mostly, BUT the original question contains two extra constraints that aren't included in this tabulation solution. If this problem was a perfect 1:1 replica of the 0/1 knapsack problem (just replacing profit with Atk and weight with memory), the solution would look something like [this](../code/dp_digimon.py)
 
 Firstly, we cannot formulate a team with more than 3 digimon. Intuitively, and based on the difference in time complexity O(n^3^) vs O(2^n^), you might think that this constraint makes the code simpler rather than more verbose. But, the original dp solution can include as many digimon as possible, as long as the total team weight doesn't exceed the capacity, so we have to do extra work to adapt a classic dp solution to this problem. 
 
