@@ -1,0 +1,104 @@
+---
+layout: post
+title: Sample blog post about what I did to parse files and answer questions about data
+subtitle: There's lots to learn!
+comments: true
+---
+
+I downloaded the `penguins_size.csv` file which has many aspects of penguins.
+
+Here's a table that represents all the columns in the csv:
+
+| species | island | culmen_length | culmen_depth | flipper_length_mm | body_mass_g | sex |
+| :------ | :----- | :------------ || :--- |:--- | :--- | :--- |
+| Adelie | Torgersen | 39.1 | 18.7 | 181 | 3750 | MALE |
+| Adelie | Torgersen | 39.5 | 17.4 | 186 | 3800 | FEMALE |
+| Adelie | Torgersen |40.3 | 18 | 195 | 3250 | FEMALE |
+
+I didn't know what *culmen* was, so I read on the kaggle dataset linked in the Google classroom that culmen is the upper ridge of the bird's beak.
+
+So I was tasked to figure out which species has the longest bills on average and also the largest body mass.
+So I'd be averaging each species' `culmen_length` and `body_mass_g`.
+
+I'd also be just counting how many Chinstrap penguins are on the island ([sic](#local-urls)).
+I definitely want to be grouping the penguins by species then. I want to save a dictionary of values per species:
+
+```python
+penguin_data = {
+    '<SomeSpecies>': {
+        'sum_culmen_length': #,
+        'sum_body_mass_g': #,
+        'count': #
+    }
+}
+```
+
+Calculating the averages must come after \
+I take the sum and then divide by the count, so I won't include average.
+
+## Data clean up
+
+Oof! There is SOME messiness in the data. I see that there are not many but a couple "NA" values.
+Because of that, the "count" of penguins counted in the average might be overcounting if the penguins with the NA values included.
+
+I don't love this decision, but I am going to add another count to the dictionary and when calculating averages, divide by this count (`count_float`), which ignores the penguins with the NA value.
+I created a `is_float()` function to check if the value is a float, using a `try` and `except` block. I could have just simply checked for "NA" but I wanted to be more general in case the data is more messy.
+Another alternative is that I could have just dropped the penguins that are NA from the count.
+But I still want to keep a true count, because I'm curious!
+
+```python
+penguin_data = {
+    '<SomeSpecies>': {
+        'sum_culmen_length': <#>,
+        'sum_body_mass_g': <#>,
+        'count': <#>,
+        'count_float': <#> # this is the new count that ignores the NA values
+    }, 
+    '<AnotherSpecies>': { ... } # the same keys as above
+}
+```
+
+## Counting on the island...S? {#local-urls}
+
+Oops, I made a mistake with the data. I see that there are multiple islands that the penguins are on.
+So my representation of the data won't answer all the questions. 
+I want to know how many Chinstrap penguins are on only Dream island.
+When I'm building up my own dictionary above by looking at each row, I'll just add one to a simple count variable if the row represents a Chinstrap penguin on Dream island.
+My code won't be as elegant anymore, but it's an easy fix.
+
+I want to organize my code into a function and save some data in a dictionary.
+
+```python
+def read_penguin_data():
+    with open("datasets/penguins_size.csv") as f:
+        penguin_data = {}
+        count_dream = 0
+        for row in csv.DictReader(f):
+            ## This is a one-off, a little annoying
+            if row["island"] == "Dream" and row["species"] == "Chinstrap":
+                count_dream += 1
+            ## This is the dictionary I'm building up
+
+            ## pseudocode: add to penguin_data, a nested dictionary
+            ## if the species is new, need to add a new dictionary and set initial values. (count = 1, sum = initial_value)
+        print("The count of Chinstrap penguins on Dream island is", count_dream)
+        return penguin_data
+```
+
+## Adding to a nested dictionary
+
+Adding to a nested dictionary is a bit confusing.
+I need to access the dictionary first and then add another key to it, so it may look like I'm drowning in a sea of brackets. 
+```python
+penguin_data[row["species"]][<nested_key_that_I_construct>] = row["<column_name>"]
+```
+
+I just have to keep track of the dictionary I am making, and not get it mixed up with the `row` dictionary I am reading from! You can download the code <a href="https://raw.githubusercontent.com/ifenghm/beautiful-jekyll/master/code/unit1/penguins.py" download>here</a>
+
+## Getting the max 
+
+I'm proud of how clean my get_max() function is. I can get the max out of ANY property of penguins. I haven't generalized the code to load all the float keys in the `penguin_data` dictionary, I have to figure out how to do that. If I had more time that is what I would work on.
+
+## Conclusion
+
+I learned a lot about making sure the data is clean, and also that my code can be a bit messy when I'm trying to answer questions about the data. I kind of want to make a REALLY good dictionary that can hold all the data I need and cleans it up as well. I also know that I could probably make my code calculate the species with the greatest average of **any** column that is a float, I'm halfway there with the `get_max()` function but need to load in the keys correctly.
