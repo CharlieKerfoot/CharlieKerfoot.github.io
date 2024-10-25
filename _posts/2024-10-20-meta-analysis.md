@@ -7,7 +7,7 @@ comments: true
 
 This blog post will break down essential questions for evaluating the paper titled "Computer Self-Efficacy, Computer Anxiety, and Attitudes toward the Internet: A Study among Undergraduates in Unimas". I was particularly interested in this paper due to how antiquated it seems and the now-irrational fears surrounding the internet. The complete allure and mystery of the internet is fascinating two decades later. Especially since many of these same woes and questions are coming back up due to the rise of large language models and more general AI. While now we can see clearly the impacts of the internet and "computer anxiety", time will only tell for AI and LLMs.
 
-The paper can be found on JSTOR through [this link](https://www.jstor.org/stable/pdf/jeductechsoci.8.4.205.pdf) or downloaded <A href="../../ResearchPaper.pdf" download>here</a>
+The paper can be found on JSTOR through [this link](https://www.jstor.org/stable/pdf/jeductechsoci.8.4.205.pdf) or downloaded <A href="../assets/ResearchPaper.pdf" download>here</a>
 
 ## 1. What are the null and alternative hypotheses?
 
