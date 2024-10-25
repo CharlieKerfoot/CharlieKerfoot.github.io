@@ -19,7 +19,7 @@ The study investigates relationships between computer anxiety, self-efficacy, an
 These hypotheses guide the exploration of how variables such as gender, faculty, and time spent on the Internet affect attitudes toward technology.
 ## 2. Who is collecting and analyzing this data?
 
-The data collection and analysis were conducted by Hong Kian Sam, Abang Ekhsan Abang Othman, and Zaimuarifuddin Shukri Nordin from the Faculty of Cognitive Sciences and Human Development, Universiti Malaysia Sarawak (Unimas). Their expertise lies in understanding human development in educational and technological contexts. Aside from research papers, not much about them is available online.
+The data collection and analysis were conducted by Hong Kian Sam, Abang Ekhsan Abang Othman, and Zaimuarifuddin Shukri Nordin from the Faculty of Cognitive Sciences and Human Development, Universiti Malaysia Sarawak (Unimas). Their expertise lies in understanding human development in educational and technological contexts. Aside from research papers, not much about them is available online. This may be relevant later in the discussion of whether publish or perish has impacted this study and how the authors of this paper are researchers by occupation.
 
 ## 3. What datasets does this study reference or use? Are these datasets available to the public?
 
@@ -31,9 +31,11 @@ This study uses original data collected from 148 undergraduates at Unimas throug
 
 The data used in this study is not publicly available, as it was collected through a specific survey for this research. The questionnaire details are included in the paper's appendix, but the raw data remains private.
 
+I would put the scales used here, but they are far too long and extensive to be included verbatim. Please refer to the Appendix for more details about the scales (CARS, IAS, CSE).
+
 ## 4. Why are they interested in this data?
 
-The researchers are interested in understanding how students' confidence in using computers (self-efficacy), their anxiety around technology, and their attitudes toward the Internet impact their academic behavior and outcomes. This is relevant in a world where computer literacy is crucial for professional success, especially in higher education. The study also seeks to challenge longstanding gender biases in computer use by exploring differences between male and female students in Malaysia.
+The researchers are interested in understanding how students' confidence in using computers (self-efficacy), their anxiety around technology, and their attitudes toward the Internet impact their academic behavior and outcomes. This is relevant in a world where computer literacy is crucial for professional success, especially in higher education. Especially, in 2005, when internet use and computer self-efficacy are not nearly as prevalent as they are today. The study also seeks to challenge longstanding gender biases in computer use by exploring differences between male and female students in Malaysia.
 
 ## 5. What data is being recorded? What data might be left out?
 
@@ -58,11 +60,11 @@ The study provides statistical evidence using various measures:
 
 - Chi-square tests to examine relationships between Internet usage patterns and attitudes.
 
-For example, undergraduates from the Faculty of Computer Science showed significantly higher self-efficacy, indicating that discipline plays a role in confidence with technology​.
+For example, undergraduates from the Faculty of Computer Science showed significantly higher self-efficacy, indicating that discipline plays a role in confidence with technology​. Honestly, I do not know much about these tests, so I can't provide as much context as I would like.
 
 ## 7. How was this study funded?
 
-The paper does not explicitly mention funding sources. However, given that the research is conducted by faculty at Unimas, it is likely supported by the university's internal resources. Additionally, the journal in which the study is published collaborates with JSTOR, suggesting potential access to broader academic resources.
+The paper does not explicitly mention funding sources. However, given that the research is conducted by faculty at Unimas, it is likely supported by the university's internal resources. Additionally, the journal in which the study is published (Educational Technology & Society) collaborates with JSTOR, suggesting potential access to broader academic resources. The journal is pretty well known listed #15 in Google Scholar Top Publications in Educational Technology and 22nd among 756 journals with all indexes (SSCI; SCIE; ESCI) under the  category of education & educational research, placing the journal in a high position among key journals in our field (via https://www.j-ets.net/).
 
 ## 8. Do you think publish or perish had an effect on this study?
 
