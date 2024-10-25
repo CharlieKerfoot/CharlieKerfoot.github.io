@@ -64,7 +64,7 @@ For example, undergraduates from the Faculty of Computer Science showed signific
 
 ## 7. How was this study funded?
 
-The paper does not explicitly mention funding sources. However, given that the research is conducted by faculty at Unimas, it is likely supported by the university's internal resources. Additionally, the journal in which the study is published (Educational Technology & Society) collaborates with JSTOR, suggesting potential access to broader academic resources. The journal is pretty well known listed #15 in Google Scholar Top Publications in Educational Technology and 22nd among 756 journals with all indexes (SSCI; SCIE; ESCI) under the  category of education & educational research, placing the journal in a high position among key journals in our field (via https://www.j-ets.net/).
+The paper does not explicitly mention funding sources. However, given that the research is conducted by faculty at Unimas, it is likely supported by the university's internal resources. Additionally, the journal in which the study is published (Educational Technology & Society) collaborates with JSTOR, suggesting potential access to broader academic resources. The journal is pretty well known listed #15 in Google Scholar Top Publications in Educational Technology and 22nd among 756 journals with all indexes (SSCI; SCIE; ESCI) under the  category of education & educational research, placing the journal in a high position among key journals in our field (via [the Educational Technology & Society website](https://www.j-ets.net/)).
 
 ## 8. Do you think publish or perish had an effect on this study?
 
