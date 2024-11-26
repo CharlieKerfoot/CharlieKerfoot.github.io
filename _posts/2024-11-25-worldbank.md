@@ -107,6 +107,6 @@ The print line before `create_country_data` is called serves as the header for t
 
 Once you run `python3 lab2.py > countries.csv`, you should get the complete csv file.
 
-Here is the [full python file](../../lab2_worldbank/lab2.py).
+Here is the <A href="../assets/lab3.py" download>full python file</a>
 
 
