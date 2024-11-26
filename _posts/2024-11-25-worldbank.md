@@ -105,8 +105,8 @@ for country in countries:
 
 The print line before `create_country_data` is called serves as the header for the CSV. 
 
-Once you run `python3 lab2.py > countries.csv`, you should get the complete csv file.
+Once you run `python3 lab3.py > countries.csv`, you should get the complete csv file.
 
-Here is the <A href="../assets/lab3.py" download>full python file</a>
+Here is the <a href="../assets/lab3.py" download>full python file</a>
 
 
