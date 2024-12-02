@@ -31,9 +31,12 @@ def process_indicator(indicator, id, results):
         data = data[3136:]
         for row in data:
             key = (row['countryiso3code'], row['date'])
+            name = row['country']['value']
+            if (row['country']['value'].find(',') != -1):
+                name = row['country']['value'].split(',')[0]
             if key not in results:
                 results[key] = CountryYear(
-                    row['country']['value'], row['countryiso3code'], row['date'])
+                    name, row['countryiso3code'], row['date'])
             results[key].indicators[indicator] = row['value']
 
 
@@ -54,5 +57,44 @@ INDICATORS = {
 
 print(f"Name, Iso3, Year, {list(INDICATORS)[0]}, {list(INDICATORS)[1]}, {list(INDICATORS)[2]}, {list(INDICATORS)[3]}, {list(INDICATORS)[4]}")
 countries = create_country_data(INDICATORS)
-# for country in countries:
-#     print(country)
+for country in countries:
+   print(country)
+
+
+API_KEY = "60aLDfoyewOG5tnPoRVKQjNUXTCYEFW9XQDyZi4jpny610UgkK0xZL13TOsNnWeN"
+
+
+def upload_data(dataset, indicators, api_key):
+    payload = {indicator: [country.indicators.get(indicator) for country in dataset]
+               for indicator in indicators}
+    
+    response = requests.post('https://ifenghm.pythonanywhere.com/upload', headers={"apikey": api_key}, json=payload)
+    response.raise_for_status()
+    data = response.json()
+
+    return data
+
+
+def analyze_data(file_id, indicators, api_key):
+    results = {}
+
+    for i in range(len(indicators)):
+        for j in range(i + 1, len(indicators)):
+            key = (indicators[i], indicators[j])
+
+            response = requests.get('https://ifenghm.pythonanywhere.com/analyze', headers={"apikey": api_key}, params={
+                "independent": indicators[i],
+                "dependent": indicators[j],
+                "id": file_id,
+            })
+            response.raise_for_status()
+            data = response.json()
+            results[key] = data
+
+    return results
+
+
+file_id = upload_data(countries, INDICATORS.keys(), API_KEY)
+results = analyze_data(file_id['id'], list(INDICATORS.keys()), API_KEY)
+#for result in results:
+#    print(f"{result}: {results[result]}")
