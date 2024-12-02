@@ -189,7 +189,10 @@ With this in mind, here are the International p-values that I came to:
 ('Life_Expectancy', 'Literacy'): {'p_value': 0.0, 'slope': 1.5141211956118987}
 ('Electricity', 'Literacy'): {'p_value': 0.0, 'slope': 0.4041856194561441}
 ```
+
 The two values in the key represent the independent and dependent variables. With so much data, the p-values almost all suggest some correlation, be it sometimes very, very tiny. In some cases, even, the p-value was equal to zero, meaning the value was so ridiculously small that the program simply rounded to zero (likely 10+ orders of magnitude smaller than 1).
+
+## Conclusion
 
 Immediately, I think many of these values or correlations can be disregarded. The slope for population vs. literacy rates is so small that it isn't worth considering. Same for population and life expectancy or access to electricity.
 
