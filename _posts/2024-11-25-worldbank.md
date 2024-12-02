@@ -178,7 +178,8 @@ Ultimately, this was the correlation I decided to look at for two main reasons:
 
 With this in mind, here are the International p-values that I came to: 
 
-```python ('Population', 'Gdp'): {'p_value': 3.124887702710133e-05, 'slope': -6.225753518546791e-06}
+```python 
+('Population', 'Gdp'): {'p_value': 3.124887702710133e-05, 'slope': -6.225753518546791e-06}
 ('Population', 'Life_Expectancy'): {'p_value': 0.0005415952365919185, 'slope': 3.206104367224094e-09}
 ('Population', 'Electricity'): {'p_value': 0.21117418758464002, 'slope': 3.801492607233462e-09}
 ('Population', 'Literacy'): {'p_value': 0.7240046782670069, 'slope': 1.264726337985555e-09}
