@@ -207,4 +207,6 @@ In the future, I would pick indicators that have more similar change or manipula
 
 I put all of the code in snippets throughout this post, but, in case your interested, here is the <a href="../assets/lab3.py" download>full python file</a>.
 
+I, obviously, removed my api key from the file, so if you want to run the code, you will have to generate your own api key from Ms. Feng's API.
+
 

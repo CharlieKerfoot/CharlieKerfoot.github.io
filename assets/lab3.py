@@ -61,7 +61,7 @@ for country in countries:
    print(country)
 
 
-API_KEY = "60aLDfoyewOG5tnPoRVKQjNUXTCYEFW9XQDyZi4jpny610UgkK0xZL13TOsNnWeN"
+API_KEY = "GENERATE YOUR OWN KEY"
 
 
 def upload_data(dataset, indicators, api_key):
