@@ -45,8 +45,8 @@ I also made some other ones that aren't as good/don't really work/don't really m
 <div id="vis"></div>
 
 <script type="text/javascript">
-  var spec = "https://raw.githubusercontent.com/CharlieKerfoot/CharlieKerfoot.github.io/refs/heads/master/code/graphs/stocks1.json";
-  vegaEmbed('#vis', spec).then(function(result) {
+  var spec2 = "https://raw.githubusercontent.com/CharlieKerfoot/CharlieKerfoot.github.io/refs/heads/master/code/graphs/stocks1.json";
+  vegaEmbed('#vis', spec2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
@@ -57,8 +57,8 @@ I also made some other ones that aren't as good/don't really work/don't really m
 <div id="vis"></div>
 
 <script type="text/javascript">
-  var spec = "https://raw.githubusercontent.com/CharlieKerfoot/CharlieKerfoot.github.io/refs/heads/master/code/graphs/stocks2.json";
-  vegaEmbed('#vis', spec).then(function(result) {
+  var spec3 = "https://raw.githubusercontent.com/CharlieKerfoot/CharlieKerfoot.github.io/refs/heads/master/code/graphs/stocks2.json";
+  vegaEmbed('#vis', spec3).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
@@ -79,8 +79,8 @@ I tried to find a treemap chart in altair, but, unfortunately, there isn't a set
 <div id="vis"></div>
 
 <script type="text/javascript">
-  var spec = "https://raw.githubusercontent.com/CharlieKerfoot/CharlieKerfoot.github.io/refs/heads/master/code/graphs/wordle1.json";
-  vegaEmbed('#vis', spec).then(function(result) {
+  var spec4 = "https://raw.githubusercontent.com/CharlieKerfoot/CharlieKerfoot.github.io/refs/heads/master/code/graphs/wordle1.json";
+  vegaEmbed('#vis', spec4).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
@@ -93,8 +93,8 @@ This one just only displays one box for some reason and just does not remotely w
 <div id="vis"></div>
 
 <script type="text/javascript">
-  var spec = "https://raw.githubusercontent.com/CharlieKerfoot/CharlieKerfoot.github.io/refs/heads/master/code/graphs/wordle2.json";
-  vegaEmbed('#vis', spec).then(function(result) {
+  var spec5 = "https://raw.githubusercontent.com/CharlieKerfoot/CharlieKerfoot.github.io/refs/heads/master/code/graphs/wordle2.json";
+  vegaEmbed('#vis', spec5).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
