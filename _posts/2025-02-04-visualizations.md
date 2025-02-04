@@ -17,10 +17,66 @@ The marks of the graph are the price in USD, which is displayed on the y-axis, a
 
 Here it is:
 
+<head>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <!-- Import vega-embed -->
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+
+<div id="vis"></div>
+
+<script type="text/javascript">
+  var spec = "https://raw.githubusercontent.com/CharlieKerfoot/CharlieKerfoot.github.io/refs/heads/master/code/graphs/aapl.json";
+  vegaEmbed('#vis', spec).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+</body>
+
 I am really quite happy with how this graph turned out. It is basically the exact same as the original. Maybe the only thing I could add is color indicating positive or negative, but really that is a small detail in my opinion. 
 
 I also made some other ones that aren't as good/don't really work/don't really make sense, but I still I like them:
 
+<head>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <!-- Import vega-embed -->
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+
+<div id="vis"></div>
+
+<script type="text/javascript">
+  var spec = "https://raw.githubusercontent.com/CharlieKerfoot/CharlieKerfoot.github.io/refs/heads/master/code/graphs/stocks1.json";
+  vegaEmbed('#vis', spec).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+</body>
+
+<head>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <!-- Import vega-embed -->
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+
+<div id="vis"></div>
+
+<script type="text/javascript">
+  var spec = "https://raw.githubusercontent.com/CharlieKerfoot/CharlieKerfoot.github.io/refs/heads/master/code/graphs/stocks2.json";
+  vegaEmbed('#vis', spec).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+</body>
 
 ## Wordle TreeMap
 I remembered that a few years ago when I played Wordle day in and day out, they had released a Wordle bot which analyzes your guesses with pretty neat data visualizations. There was one in particular that I had in mind, which displayed each of the most common guesses and had them take up a certain amount of area within a larger rectangle. It looks like this: 
@@ -32,12 +88,50 @@ I did some research and found a very similar kind of chart to this called a tree
 
 I tried to find a treemap chart in altair, but, unfortunately, there isn't a set way to implement them. Instead, I tried to use mark_rect(), but as you will soon see, it did not work out as I hoped. Also, rather than using wordle guesses, I instead tried to use the vega monarchs dataset and define the size based on the duration of the monarch's reign. This was also a fatal mistake. Regardless, here are my best attempts: 
 
+<head>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <!-- Import vega-embed -->
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+
+<div id="vis"></div>
+
+<script type="text/javascript">
+  var spec = "https://raw.githubusercontent.com/CharlieKerfoot/CharlieKerfoot.github.io/refs/heads/master/code/graphs/wordle1.json";
+  vegaEmbed('#vis', spec).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+</body>
+
 This one just only displays one box for some reason and just does not remotely work.
 
+<head>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <!-- Import vega-embed -->
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+
+<div id="vis"></div>
+
+<script type="text/javascript">
+  var spec = "https://raw.githubusercontent.com/CharlieKerfoot/CharlieKerfoot.github.io/refs/heads/master/code/graphs/wordle2.json";
+  vegaEmbed('#vis', spec).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+</body>
 
 And this one is not very close to the example. It is just a bar chart, but weirder and hackier and overall not very good. 
 
 I am going to take the liberty of blaming the original graph on this one. Upon further reflection, the graph itself is just not very good. It looks cool, but it doesn't have a clear structure, axis, and the area of the guesses seems almost random. Also, it turns out that they have replaced this graph in the wordle bot interface with this new one: 
+
 ![New Wordle Graph](../assets/img/new-wordle-chart.png)
 
 It is much clearer and makes a lot more sense to be honest. I just, personally, don't think it looks nearly as cool. 
