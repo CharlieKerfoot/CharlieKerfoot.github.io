@@ -40,13 +40,6 @@ I am really quite happy with how this graph turned out. It is basically the exac
 
 I also made some other ones that aren't as good/don't really work/don't really make sense, but I still I like them:
 
-<head>
-  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
-  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-  <!-- Import vega-embed -->
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-</head>
 <body>
 
 <div id="vis"></div>
@@ -59,13 +52,6 @@ I also made some other ones that aren't as good/don't really work/don't really m
 </script>
 </body>
 
-<head>
-  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
-  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-  <!-- Import vega-embed -->
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-</head>
 <body>
 
 <div id="vis"></div>
@@ -88,13 +74,6 @@ I did some research and found a very similar kind of chart to this called a tree
 
 I tried to find a treemap chart in altair, but, unfortunately, there isn't a set way to implement them. Instead, I tried to use mark_rect(), but as you will soon see, it did not work out as I hoped. Also, rather than using wordle guesses, I instead tried to use the vega monarchs dataset and define the size based on the duration of the monarch's reign. This was also a fatal mistake. Regardless, here are my best attempts: 
 
-<head>
-  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
-  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-  <!-- Import vega-embed -->
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-</head>
 <body>
 
 <div id="vis"></div>
@@ -109,13 +88,6 @@ I tried to find a treemap chart in altair, but, unfortunately, there isn't a set
 
 This one just only displays one box for some reason and just does not remotely work.
 
-<head>
-  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
-  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-  <!-- Import vega-embed -->
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-</head>
 <body>
 
 <div id="vis"></div>
