@@ -1,16 +1,8 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+My name is Charlie Kerfoot. I develop software and train deep learning models. This is my Art of Data website, where you can view the blogs I wrote on different datasets and my corresponding datavisualizations.
 
-- I rock a great mustache
-- I'm extremely loyal to my family
-
-What else do you need?
-
-### My story
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+For more information about me, here is my actual website: [charliekerfoot.com](https://charliekerfoot.com)
